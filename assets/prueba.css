@@ -1,0 +1,86 @@
+
+:root {
+    --background:#1F2336;
+    --scrollbar-background: #313852;
+    --text: #F1F1F1;
+    --text-active: #F1F1F180;
+    --text1: #b5b3b3;
+    --icon-size: 40px;
+    --icon-size2:20px;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-snap-type: both proximity;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    background-color: var(--background);
+    justify-content: center;
+    align-items: center;
+}
+.home {
+    max-height: 50px;
+    width: 100%;
+    color: var(--text1);
+    font-size: var(--icon-size2);
+}
+
+a .fab fa-home:hover {   
+    cursor: pointer;
+}
+:is(a:link, a:visited) {
+    color:var(--text1);
+    font-size: 1.2rem;  
+    text-decoration: none;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 600px; 
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    height: 100vh;  
+}
+
+.card {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    min-width: 12.5rem;
+    min-height: 12.5rem;
+    color: var(--text);
+    display: flex;
+    font-weight: 600;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+img {
+    width: auto;
+    height: 200px;
+}
+
+.container::-webkit-scrollbar {
+    height: 0.65rem;
+}
+
+.container::-webkit-scrollbar-track {
+    background: var(--scrollbar-background);
+    border-radius: 50rem;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: var(--text);
+    border-radius: 50rem;
+}
